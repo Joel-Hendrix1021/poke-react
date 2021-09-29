@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react";
 
 export  function useFech(url) {
-    const [pokeDetails, setPokeDetails] = useState([]);
-    const [isLoading, setIsLoading] = useState(false)
+  
+    const [state, setState] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     
 
   useEffect(() => {
+     setIsLoading(true)
+    getFechData(url)
+    .then(res=> setState(res))
+    .finally(() => setIsLoading(false))
     
-    getInfoPoke(url)
-    .then(res=> setPokeDetails(res))
-  
   }, [url]);
 
  
-  const getInfoPoke = async (n) => {
+  const getFechData = async (n) => {
     const res = await fetch(n);
-    const poke = res.json();
+    const data = res.json();
     
-    return poke;
+    return data;
   };
-  return { pokeDetails }
+  return { state, isLoading }
 }

@@ -3,17 +3,29 @@ import Footer from "./components/Footer";
 import Header from "./components/Header/Header";
 
 import Pokemons from "./components/pokemons/Pokemons";
-
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Favs from "./pages/Favs";
+import Type from "./pages/Type";
 
 function App() {
-
   return (
-      <div className="App">
-        <Header/>
-        <Pokemons />
-        <Footer/>
-      </div>
+    <div className="App">
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/type">
+            <Type />
+          </Route>
+          <Route path="/favs">
+            <Favs />
+          </Route>
+          <Route path="/">
+            <Pokemons />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
