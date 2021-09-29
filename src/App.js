@@ -1,7 +1,8 @@
 import "./App.css";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Pokemons from "./components/Pokemons";
+import Header from "./components/Header/Header";
+
+import Pokemons from "./components/pokemons/Pokemons";
 
 
 
@@ -13,7 +14,6 @@ function App() {
         <Pokemons />
         <Footer/>
       </div>
- 
   );
 }
 
