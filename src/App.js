@@ -5,7 +5,7 @@ import Header from "./components/Header/Header";
 import Pokemons from "./components/pokemons/Pokemons";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Favs from "./pages/Favs";
-import Type from "./pages/Type";
+import Type from "./pages/type/Type";
 
 function App() {
   return (
