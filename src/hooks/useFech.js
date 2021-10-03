@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export  function useFech(url) {
   
+  console.log(url)
     const [state, setState] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     
@@ -18,7 +19,6 @@ export  function useFech(url) {
   const getFechData = async (n) => {
     const res = await fetch(n);
     const data = res.json();
-    
     return data;
   };
   return { state, isLoading }
