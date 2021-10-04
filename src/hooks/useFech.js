@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 export  function useFech(url) {
   
-  console.log(url)
     const [state, setState] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     
