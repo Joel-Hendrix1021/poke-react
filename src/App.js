@@ -14,18 +14,10 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/type/:id">
-            <TypePoke />
-          </Route>
-          <Route path="/type">
-            <Type />
-          </Route>
-          <Route path="/favs">
-            <Favs />
-          </Route>
-          <Route path="/">
-            <Pokemons />
-          </Route>
+          <Route component={TypePoke} path="/type/:id" />
+          <Route component={Type} path="/type" />
+          <Route componen={Favs} path="/favs" />
+          <Route component={Pokemons} path="/" />
         </Switch>
         <Footer />
       </Router>

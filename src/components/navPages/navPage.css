@@ -1,0 +1,21 @@
+.nav__pages {
+    display: flex;
+    position: relative;
+    width: 60rem;
+    margin:2rem auto;
+}
+
+.nav__pages ul {
+    display: flex;
+    margin: auto;
+}
+
+.nav__pages li {
+    background: var(--main-yellow);
+    padding:1rem;
+    margin:1rem;
+    width: 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
