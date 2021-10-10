@@ -4,11 +4,28 @@ import Header from "./components/Header/Header";
 
 import Pokemons from "./components/pokemons/Pokemons";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Favs from "./pages/Favs";
 import Type from "./pages/type/Type";
 import TypePoke from "./components/typePoke/TypePoke";
+import { useState } from "react";
+import FavsPages from "./pages/FavsPages";
+
 
 function App() {
+  const local = localStorage.getItem("favs")
+  const [favs, setFavs] = useState(local? local.split(",").map(item=> Number(item)):[])
+
+
+  const  handleFavs = (id)=> {
+    if(favs.includes(id)){
+      setFavs(favs.filter(f=> f !== id))
+    }else {
+     setFavs((favs)=> [...favs, id])
+    }
+ }
+ 
+ localStorage.setItem("favs", favs)
+
+
   return (
     <div className="App">
       <Router>
@@ -16,7 +33,7 @@ function App() {
         <Switch>
           <Route component={TypePoke} path="/type/:id" />
           <Route component={Type} path="/type" />
-          <Route componen={Favs} path="/favs" />
+          <Route component={FavsPages}  path="/favs" />
           <Route component={Pokemons} path="/" />
         </Switch>
         <Footer />

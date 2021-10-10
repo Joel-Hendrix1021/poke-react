@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useFech } from "../../hooks/useFech";
 import { backgroundType, colorType } from "../../lib/colorType";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
 import Modal from "../modal/Modal";
 import "./listOfPoke.css";
 
@@ -11,10 +12,12 @@ const URL_IMG =
 const URL_IMG_2 =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 
-const ListOfPoke = ({ poke }) => {
-  const { state, isLoading } = useFech(poke.url);
+const ListOfPoke = ({ poke,handleFavs,favs }) => {
+  
+  const { state, isLoading } = useFech(poke.url? poke.url: poke);
   const [showModal, setShowModal] = useState(false)
-  const [favs, setFavs] = useState(true)
+  // const [favorite, setfavorite] = useState([])
+ 
 
   const handleBanner = ()=> {
     console.log("banner")
@@ -23,18 +26,16 @@ const ListOfPoke = ({ poke }) => {
 
   // backgroundType[`${state.types[0].type.name}`]
   
-  // 
-
+  
   return (
     <>
       {showModal ? <Modal poke={state} setShowModal={setShowModal}/>: null}
       {state.length !== 0 && (
         <div className="card__poke" style={{ backgroundImage:`${backgroundType[`${state.types[0].type.name}`]}`  }}>
-         {favs 
-         ?<span onClick={()=>setFavs(!favs)} className="fas fa-heart fav"></span>
-         :<span onClick={()=>setFavs(!favs)} className="far fa-heart fav_not"></span>}
-          
-          
+         {favs.includes(state.id) 
+         ?<BsHeartFill onClick={()=>handleFavs(state.id)} className="fav"/>
+         :<BsHeart onClick={()=>handleFavs(state.id)} className=" fav_not"/>
+         }
           <div className="img__container">
             {state.sprites.other.dream_world.front_default !== null ? (
           

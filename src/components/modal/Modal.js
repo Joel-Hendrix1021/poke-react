@@ -45,11 +45,11 @@ const Modal = ({ poke, setShowModal }) => {
       <div className="modal__poke__body">
         <div className="modal__poke__item">
           <p>Height</p>
-          <p>{poke.height} mts</p>
+          <p>{poke.height/10} mts</p>
         </div>
         <div className="modal__poke__item">
           <p>Weight</p>
-          <p>{poke.weight} kg</p>
+          <p>{poke.weight/10} kg</p>
         </div>
       </div>
     </div>

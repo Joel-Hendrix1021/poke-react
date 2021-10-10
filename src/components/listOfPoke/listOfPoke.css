@@ -5,7 +5,8 @@
     margin: auto;
     border-radius: 1rem;
     padding:1rem;
-   
+    -webkit-box-shadow: 1px -1px 32px -12px #000000; 
+box-shadow: 1px -1px 32px -12px #000000;
     transition: ease-in 0.2s;
     position: relative;
 }
@@ -53,8 +54,8 @@
     left: 10px;
     font-size:2rem;
     cursor: pointer;
-    font-weight: 200;
-    color: black;
+    font-weight: 100;
+    color: white;
 }
 
 .card__title {

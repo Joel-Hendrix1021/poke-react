@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { useFavorite } from "../../hooks/useFavorite";
 import { useFech } from "../../hooks/useFech";
 import { cutArray } from "../../lib/cutArray";
 
 import ListOfPoke from "../listOfPoke/ListOfPoke";
+import LoadingPoke from "../LoadingPoke/LoadingPoke";
 import NavPages from "../navPages/NavPages";
 
 const TypePoke = () => {
@@ -12,6 +14,8 @@ const TypePoke = () => {
   const [page, setPage] = useState(0)
   const [cutArrays, setCutArrays] = useState([])
   const { state, isLoading } = useFech(`https://pokeapi.co/api/v2/type/${id}`);
+
+  const {favs, handleFavs} = useFavorite()
 
   useEffect(() => {
     setPage(0)
@@ -33,7 +37,22 @@ const TypePoke = () => {
 
   return (
     <>
-      <div className="container">
+      {cutArrays.length > 0 ? (
+        <div className="container">
+           {cutArrays[page].map(poke=> {
+             return <ListOfPoke poke={poke.pokemon} key={poke.pokemon.name} handleFavs={handleFavs} favs={favs}/>;
+           })}
+        </div>
+      ): <LoadingPoke />
+      }
+    </>
+  );
+};
+
+export default TypePoke;
+
+
+{/* <div className="container">
         {cutArrays.length > 0 ? (
           cutArrays[page].map((poke) => {
             
@@ -43,9 +62,4 @@ const TypePoke = () => {
           <h1>cargando....</h1>
         )}
       </div>
-      <NavPages handlePages={handlePages} cutArrays={cutArrays}/>
-    </>
-  );
-};
-
-export default TypePoke;
+      <NavPages handlePages={handlePages} cutArrays={cutArrays}/> */}

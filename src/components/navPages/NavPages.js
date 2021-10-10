@@ -27,7 +27,6 @@ const NavPages = ({ handlePages, cutArrays }) => {
         setPageItem(pageItem.map(item=> item-10))
      }
   }
-  console.log(cutArrays)
  
   return (
     <nav className="nav__pages">
