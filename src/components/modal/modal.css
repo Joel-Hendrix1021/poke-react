@@ -100,3 +100,13 @@
     font-weight: 900;
     text-shadow: none;
 }
+
+@media (max-width: 768px) {
+    .modal__container {
+        width: 90%;
+        margin: auto;
+        height: 70rem;
+    }
+}
+
+

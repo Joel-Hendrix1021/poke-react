@@ -7,7 +7,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Type from "./pages/type/Type";
 import TypePoke from "./components/typePoke/TypePoke";
 import { useState } from "react";
-import FavsPages from "./pages/FavsPages";
+import FavsPages from "./pages/favsPages/FavsPages";
+
 
 
 function App() {

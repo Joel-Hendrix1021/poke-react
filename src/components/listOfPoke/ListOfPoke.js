@@ -26,7 +26,6 @@ const ListOfPoke = ({ poke,handleFavs,favs }) => {
 
   // backgroundType[`${state.types[0].type.name}`]
   
-  
   return (
     <>
       {showModal ? <Modal poke={state} setShowModal={setShowModal}/>: null}

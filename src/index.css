@@ -20,13 +20,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #0093E9;
   background: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  background-repeat: no-repeat;
   min-height: 100vh;
  
 }
 
 html {
   font-size:62.5%;
-  min-width: 100vh;
+
 }
 
 li {
