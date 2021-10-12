@@ -1,0 +1,17 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 60%;
+    align-items: center;
+    border-radius:2rem;
+}
+
+
+.single__info {
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+    
+}
+

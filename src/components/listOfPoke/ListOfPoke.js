@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { Link } from "react-router-dom";
 import { useFech } from "../../hooks/useFech";
-import { backgroundType, colorType } from "../../lib/colorType";
+import { backgroundType } from "../../lib/colorType";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import Modal from "../modal/Modal";
 import "./listOfPoke.css";
@@ -14,7 +14,8 @@ const URL_IMG_2 =
 
 const ListOfPoke = ({ poke,handleFavs,favs }) => {
   
-  const { state, isLoading } = useFech(poke.url? poke.url: poke);
+  
+  const { state } = useFech(poke.url? poke.url: poke);
   const [showModal, setShowModal] = useState(false)
   // const [favorite, setfavorite] = useState([])
  

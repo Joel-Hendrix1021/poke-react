@@ -1,32 +1,22 @@
 .nav__pages {
-  position: relative;
-  width: 70%;
-  margin: 2rem auto;
-}
-
-.nav__pages ul {
   display: flex;
   justify-content: space-between;
-  background: red;
+  width: 40%;
+  margin: 2rem auto;
 }
 
 .nav__pages li {
   background: var(--main-yellow);
   width: 1rem;
+  padding:0.8rem;
   border-radius: 5px;
   cursor: pointer;
 }
 
-/* @media (max-width: 800px) {
+@media (max-width: 800px) {
   .nav__pages {
     width: 90%;
-    background: red;
+    
   }
-  .nav__pages ul {
-      background: blue;
-      width: 90%;
-      
-  }
-
  
-} */
+} 

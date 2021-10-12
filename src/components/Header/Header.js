@@ -1,13 +1,25 @@
 import "./header.css";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
+import { useState } from "react";
 
 const Header = () => {
+
+  const [keyword, setKeyword] = useState(null)
+  const history = useHistory()
+
+  const handleKeyword=(e)=> {
+    e.preventDefault()
+    
+    history.push(`/poke/${keyword}`)
+  }
+ 
+
   return (
     <header>
       <h1 className="header__title">Poke-React</h1>
       <div className="container__form">
-        <form className="form">
-          <input type="text" />
+        <form className="form" onSubmit={handleKeyword}>
+          <input type="text" onChange={(e)=> setKeyword(e.target.value)}/>
           <button>
             <i className="fas fa-search"></i>
           </button>

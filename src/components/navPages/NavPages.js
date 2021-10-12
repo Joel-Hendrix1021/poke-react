@@ -27,16 +27,18 @@ const NavPages = ({ handlePages, cutArrays }) => {
         setPageItem(pageItem.map(item=> item-10))
      }
   }
+
+  
  
   return (
     <nav className="nav__pages">
-      <ul>
-        <li onClick={(e) => handleNextPages("<")}>{"<"}</li>
+        {
+          pageItem[0] > 9 && <li onClick={(e) => handleNextPages("<")}>{"<"}</li>
+        }
         {pageItem.map((item, index) => {
           return <li key={item} onClick={(e) => handlePages(item)}>{item + 1}</li>;
         })}
         <li onClick={(e) => handleNextPages(">")}>{">"}</li>
-      </ul>
     </nav>
   );
 };

@@ -1,0 +1,14 @@
+.poke__error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poke__error img {
+    width: 7rem;
+    height: 7rem;
+}
+
+.poke__error > h1 {
+    font-size:4rem;
+}
