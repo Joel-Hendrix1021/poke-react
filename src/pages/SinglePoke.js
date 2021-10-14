@@ -33,9 +33,10 @@ const SinglePoke = () => {
           src={`${URL_IMG}${state.id}.svg`}
           alt={state.name}
         />
-      </div>
-      <div className="col">
         <h1 className="single__title">{state.name}</h1>
+      </div>
+      <div className="col col__lef">
+        
         <div className="single__info">
           {state.stats.map((item) => {
             return (

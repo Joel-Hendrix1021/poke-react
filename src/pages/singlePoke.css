@@ -1,6 +1,7 @@
 .flex {
     display: flex;
     justify-content: center;
+    
     flex-direction: row;
     width: 60%;
     align-items: center;
@@ -13,5 +14,34 @@
     grid-gap: 0.5rem;
     grid-template-columns: 1fr 1fr;
     
+}
+
+@media (max-width: 830px) {
+    .single__img {
+        width: 10rem;
+    }
+    .flex {
+        width:90%
+    }
+
+
+    
+}
+
+
+@media (max-width: 500px) {
+    .modal__barPower {
+        width: 8rem;
+    }
+
+    .modal__item__name, .modal__item__num {
+        font-size:1rem;
+    }
+
+    .col__lef {
+        
+
+    }
+   
 }
 
