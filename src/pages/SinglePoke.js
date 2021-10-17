@@ -1,9 +1,12 @@
+
 import { useEffect } from "react";
 import { useHistory, useParams } from "react-router";
+import { Link } from "react-router-dom";
 import LoadingPoke from "../components/LoadingPoke/LoadingPoke";
 import { useFech } from "../hooks/useFech";
 import { backgroundType } from "../lib/colorType";
 import Error404 from "./Error404";
+
 import "./singlePoke.css";
 
 const URL_IMG =
@@ -17,10 +20,20 @@ const SinglePoke = () => {
     `https://pokeapi.co/api/v2/pokemon/${keyword}`
   );
 
+  useEffect(() => {
+    if(isError) {
+      history.push('/*')
+    }
+  }, [isError])
+  
+  if(isError) {
+    return <Error404/>
+  }
 
   return !isError && isLoading ? (
     <LoadingPoke />
   ) : (
+    <>
     <div
       className="container flex"
       style={{
@@ -33,10 +46,29 @@ const SinglePoke = () => {
           src={`${URL_IMG}${state.id}.svg`}
           alt={state.name}
         />
+        <div className="single__img__type">
+          {state.types ? (
+            state.types.map((item) => {
+              return (
+                <Link
+                  key={item.type.name}
+                  to={`/type/${item.type.url.split("/")[6]}`}
+                >
+                  <img
+                    className="card__logo__type"
+                    src={`/type/${item.type.name}.png`}
+                    alt=""
+                  />
+                </Link>
+              );
+            })
+          ) : (
+            <h1>cargando..</h1>
+          )}
+        </div>
         <h1 className="single__title">{state.name}</h1>
       </div>
       <div className="col col__lef">
-        
         <div className="single__info">
           {state.stats.map((item) => {
             return (
@@ -52,6 +84,7 @@ const SinglePoke = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

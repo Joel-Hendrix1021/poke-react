@@ -18,7 +18,7 @@ export  function useFech(url) {
 
  
   const getFechData = async (n) => {
- 
+     
       const res = await fetch(n);
       const data = res.json();
       return data;

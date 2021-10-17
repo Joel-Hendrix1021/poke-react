@@ -1,7 +1,6 @@
 .flex {
     display: flex;
     justify-content: center;
-    
     flex-direction: row;
     width: 60%;
     align-items: center;
@@ -23,9 +22,7 @@
     .flex {
         width:90%
     }
-
-
-    
+  
 }
 
 
@@ -38,9 +35,16 @@
         font-size:1rem;
     }
 
-    .col__lef {
-        
 
+    .flex {
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 2rem 0px;
+        
+    }
+    .col {
+        display: flex;
+        flex-direction: column;
     }
    
 }
