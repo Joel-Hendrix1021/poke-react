@@ -80,3 +80,65 @@ export const backgroundType = {
   shadow: "#4c4444"
 }
 
+export const urlPokeLogo = {
+  
+  normal: "https://imgur.com/8Tqvsjl",
+
+  fighting: "https://imgur.com/Gp1IQeq",
+
+  flying: "https://imgur.com/IZfXuV1",
+
+  poison: "https://imgur.com/8Cjiem4",
+
+  ground: "https://imgur.com/by2xTQt",
+
+  rock: "https://imgur.com/CuKUjCu",
+
+  bug: "https://imgur.com/a/XvHjeD2",
+
+  ghost: "https://imgur.com/ARAz4B0",
+
+  steel: "https://imgur.com/qaTgxUF",
+
+  fire: "https://imgur.com/v3Zl6BI",
+
+  water: "https://imgur.com/qaTgxUF",
+
+  grass: "https://imgur.com/HRNkJ7f",
+
+  electric: "https://imgur.com/haU8Vw5",
+
+  psychic: "https://imgur.com/JY0aiII",
+
+  ice: "https://imgur.com/RQAbhz3",
+
+  dragon: "https://imgur.com/k8ma87a",
+
+  dark: "https://imgur.com/QjuSIWY",
+
+  fairy: "https://imgur.com/wnIyeO5",
+
+  shadow: "https://imgur.com/0WdDmF1"
+}
+
+
+///   //bug
+//     //dark
+//      //dragon
+//      //electric
+//      //fairy
+//      //fighting
+//      //fire
+//      //flying
+//      //ghost
+//     //grass
+///     //ground
+//      //ice
+///    //normal
+//      //poison
+//      //psychic
+///     //rock
+//      shadow
+///    //steel
+//     //water
+

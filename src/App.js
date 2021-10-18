@@ -11,6 +11,9 @@ import SinglePoke from "./pages/SinglePoke"
 import Error404 from "./pages/Error404";
 
 
+
+
+
 function App() {
   
  
@@ -33,3 +36,4 @@ function App() {
 }
 
 export default App;
+

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useFech } from "../../hooks/useFech";
-import { colorType } from "../../lib/colorType";
+import { colorType,urlPokeLogo } from "../../lib/colorType";
 import LoadingPoke from '../../components/LoadingPoke/LoadingPoke'
 import "./type.css";
 
@@ -21,7 +21,7 @@ const Type = () => {
                 <Link to={`/type/${type.url.split("/")[6]}`}>
                   <img
                     className="card__logo__type"
-                    src={`/type/${type.name}.png`}
+                    src={`${urlPokeLogo[type.name]}.png`}
                     alt={type.name}
                   />
                 </Link>

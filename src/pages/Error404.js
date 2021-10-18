@@ -6,7 +6,7 @@ function Error404() {
             <h1>Error</h1>
             <div className="poke__error">
             <h1>4</h1>
-            <img src="/pokebola.png" alt="404" />
+            <img src="https://imgur.com/hZM5rvG.png" alt="404" />
             <h1>4</h1>
             </div>
         </div>

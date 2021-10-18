@@ -1,7 +1,7 @@
 import {  useState } from "react";
 import { Link } from "react-router-dom";
 import { useFech } from "../../hooks/useFech";
-import { backgroundType } from "../../lib/colorType";
+import { backgroundType, urlPokeLogo} from "../../lib/colorType";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import Modal from "../modal/Modal";
 import "./listOfPoke.css";
@@ -65,8 +65,8 @@ const ListOfPoke = ({ poke,handleFavs,favs }) => {
                     <img
                       
                       className="card__logo__type"
-                      src={`/type/${item.type.name}.png`}
-                      alt=""
+                      src={`${urlPokeLogo[item.type.name]}.png`}
+                      alt={item.type.name}
                     />
                   </Link>
                 );
