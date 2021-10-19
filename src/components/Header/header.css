@@ -61,7 +61,7 @@
   font-family: impact;
   letter-spacing: 0;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.58);
-  font-family: "pokemon", cursive;
+  font-family: 'Pokemon Solid', sans-serif;
 }
 
 .nav a:hover {

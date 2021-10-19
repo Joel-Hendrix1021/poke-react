@@ -94,7 +94,7 @@ export const urlPokeLogo = {
 
   rock: "https://imgur.com/CuKUjCu",
 
-  bug: "https://imgur.com/a/XvHjeD2",
+  bug: "https://imgur.com/8M50TCL",
 
   ghost: "https://imgur.com/ARAz4B0",
 
