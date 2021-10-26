@@ -6,6 +6,7 @@ import "./navPage.css";
 const NavPages = ({ handlePages, cutArrays }) => {
   const [next, setNext] = useState(0);
   const [state, setstate] = useState(false)
+  const [pageActive, setPageActive] = useState(1)
   const [pageItem, setPageItem] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 
@@ -28,15 +29,18 @@ const NavPages = ({ handlePages, cutArrays }) => {
      }
   }
 
+  const handleActivePages=(e)=> { 
+     setPageActive(parseInt(e.target.textContent))
+  }
   
  
   return (
-    <nav className="nav__pages">
+    <nav className="nav__pages" onClick={handleActivePages}>
         {
           pageItem[0] > 9 && <li onClick={(e) => handleNextPages("<")}>{"<"}</li>
         }
         {pageItem.map((item, index) => {
-          return <li key={item} onClick={(e) => handlePages(item)}>{item + 1}</li>;
+          return <li key={item} className={item+1 == pageActive ? 'active': ''} onClick={(e) => handlePages(item)}>{item + 1}</li>;
         })}
         <li onClick={(e) => handleNextPages(">")}>{">"}</li>
     </nav>

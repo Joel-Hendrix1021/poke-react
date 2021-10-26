@@ -9,9 +9,13 @@
 .nav__pages li {
   background: var(--main-yellow);
   width: 1rem;
-  padding:0.8rem;
+  padding:0.3rem 0.8rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.nav__pages .active {
+  border:3px solid #3B5EB4;
 }
 
 @media (max-width: 800px) {
