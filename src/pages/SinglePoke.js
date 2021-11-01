@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import LoadingPoke from "../components/LoadingPoke/LoadingPoke";
 import { useFech } from "../hooks/useFech";
-import { backgroundType } from "../lib/colorType";
+import { backgroundType, urlPokeLogo } from "../lib/colorType";
 import Error404 from "./Error404";
 
 import "./singlePoke.css";
@@ -20,6 +20,7 @@ const SinglePoke = () => {
     `https://pokeapi.co/api/v2/pokemon/${keyword}`
   );
 
+  console.log(state)
   useEffect(() => {
     if(isError) {
       history.push('/*')
@@ -56,8 +57,8 @@ const SinglePoke = () => {
                 >
                   <img
                     className="card__logo__type"
-                    src={`/type/${item.type.name}.png`}
-                    alt=""
+                    src={`${urlPokeLogo[item.type.name]}.png`}
+                    alt={item.type.name}
                   />
                 </Link>
               );
