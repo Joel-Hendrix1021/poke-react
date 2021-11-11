@@ -27,7 +27,7 @@ function App() {
           <Route component={Type} path="/type" />
           <Route component={FavsPages}  path="/favs" />
           <Route component={SinglePoke} path="/poke/:keyword" />
-          <Route component={Error404} exact={true} path="*" />
+          <Route component={Error404} path="*" />
         </Switch>
         <Footer />
       </Router>
