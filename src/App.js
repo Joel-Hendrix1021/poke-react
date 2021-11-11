@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header/Header";
 
 import Pokemons from "./components/pokemons/Pokemons";
-import { BrowserRouter as Router, Switch, Route, HashRouter } from "react-router-dom";
+import {  Switch, Route, HashRouter } from "react-router-dom";
 import Type from "./pages/type/Type";
 import TypePoke from "./components/typePoke/TypePoke";
 import FavsPages from "./pages/favsPages/FavsPages";
@@ -20,7 +20,6 @@ function App() {
   return (
     <div className="App">
       <HashRouter basename="/">
-      <Router>
         <Header />
         <Switch>
         <Route component={Pokemons} exact path="/" />
@@ -31,7 +30,6 @@ function App() {
           <Route component={Error404} path="*" />
         </Switch>
         <Footer />
-      </Router>
     </HashRouter>
     </div>
   );
